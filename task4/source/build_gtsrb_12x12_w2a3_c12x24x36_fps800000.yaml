@@ -1,0 +1,37 @@
+board: Pynq-Z2
+generate_outputs:
+- estimate_reports
+- stitched_ip
+- rtlsim_performance
+- bitfile
+- pynq_driver
+model_path: ./models/gtsrb_12x12_w2a3_c12x24x36.onnx
+output_dir: ./finn_out/12x12_w2a3_c12x24x36/outputs/output_800000
+folding_config_file: ./12x12_w2a3_c12x24x36_custom_fold.json
+mvau_wwidth_max: 72
+rtlsim_batch_size: 1000
+save_intermediate_models: true
+shell_flow_type: vivado_zynq
+steps:
+- step_qonnx_to_finn
+- transform_input.step_transform_input
+- step_tidy_up
+- step_streamline
+- step_convert_to_hw
+- step_create_dataflow_partition
+- step_specialize_layers
+- step_target_fps_parallelization
+- step_apply_folding_config
+- step_generate_estimate_reports
+- step_hw_codegen
+- step_hw_ipgen
+- step_insert_dwc
+- step_set_fifo_depths
+- step_create_stitched_ip
+- step_measure_rtlsim_performance
+- step_out_of_context_synthesis
+- step_synthesize_bitfile
+- step_make_driver
+synth_clk_period_ns: 10.0
+target_fps: 800000
+

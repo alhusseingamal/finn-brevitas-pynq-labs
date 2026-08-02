@@ -1,0 +1,185 @@
+model_name,img_size,wbits,abits,c1,c2,c3,val_acc
+16x16_w1a2_c16x32x64,16,1,2,16,32,64,0.54
+16x16_w2a2_c16x32x64,16,2,2,16,32,64,85.46
+16x16_w2a3_c16x32x64,16,2,3,16,32,64,90.72
+8x8_w3a3_c16x32x64,8,3,3,16,32,64,79.88
+16x16_w3a3_c16x32x64,16,3,3,16,32,64,95.65
+20x20_w3a3_c16x32x64,20,3,3,16,32,64,98.08
+24x24_w3a3_c16x32x64,24,3,3,16,32,64,98.72
+8x8_w4a4_c16x32x64,8,4,4,16,32,64,77.69
+16x16_w2a3_c12x24x48,16,2,3,12,24,48,93.25
+12x12_w3a3_c16x32x64,12,3,3,16,32,64,98.91
+16x16_w2a3_c12x24x36,16,2,3,12,24,36,92.43
+12x12_w2a3_c16x32x64,12,2,3,16,32,64,97.36
+12x12_w2a2_c16x32x64,12,2,2,16,32,64,91.04
+12x12_w2a3_c12x24x36,12,2,3,12,24,36,93.42
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== FINN RUN STARTED Fr 31. Jul 02:33:27 CEST 2026 =====
+[START] 12x12_w2a3_c12x24x36_fps400000 at Fr 31. Jul 02:33:27 CEST 2026
+[SUCCESS] 12x12_w2a3_c12x24x36_fps400000 finished in 00:19:52 at Fr 31. Jul 02:53:19 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c12x24x36/logs/log_400000.txt
+[START] 12x12_w2a3_c12x24x36_fps800000 at Fr 31. Jul 02:53:19 CEST 2026
+[SUCCESS] 12x12_w2a3_c12x24x36_fps800000 finished in 00:19:51 at Fr 31. Jul 03:13:10 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c12x24x36/logs/log_800000.txt
+[START] 12x12_w2a3_c12x24x36_fps1200000 at Fr 31. Jul 03:13:10 CEST 2026
+[SUCCESS] 12x12_w2a3_c12x24x36_fps1200000 finished in 00:19:48 at Fr 31. Jul 03:32:58 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c12x24x36/logs/log_1200000.txt
+[START] 12x12_w2a3_c8x16x32_fps400000 at Fr 31. Jul 03:32:58 CEST 2026
+[SUCCESS] 12x12_w2a3_c8x16x32_fps400000 finished in 00:18:57 at Fr 31. Jul 03:51:55 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c8x16x32/logs/log_400000.txt
+[START] 12x12_w2a3_c8x16x32_fps800000 at Fr 31. Jul 03:51:55 CEST 2026
+[SUCCESS] 12x12_w2a3_c8x16x32_fps800000 finished in 00:19:09 at Fr 31. Jul 04:11:04 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c8x16x32/logs/log_800000.txt
+[START] 12x12_w2a3_c8x16x32_fps1200000 at Fr 31. Jul 04:11:04 CEST 2026
+[SUCCESS] 12x12_w2a3_c8x16x32_fps1200000 finished in 00:19:22 at Fr 31. Jul 04:30:26 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c8x16x32/logs/log_1200000.txt
+[START] 12x12_w2a3_c16x32x64_fps400000 at Fr 31. Jul 04:30:26 CEST 2026
+[SUCCESS] 12x12_w2a3_c16x32x64_fps400000 finished in 00:23:49 at Fr 31. Jul 04:54:15 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c16x32x64/logs/log_400000.txt
+[START] 12x12_w2a3_c16x32x64_fps800000 at Fr 31. Jul 04:54:15 CEST 2026
+[SUCCESS] 12x12_w2a3_c16x32x64_fps800000 finished in 00:23:34 at Fr 31. Jul 05:17:49 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c16x32x64/logs/log_800000.txt
+[START] 12x12_w2a3_c16x32x64_fps1200000 at Fr 31. Jul 05:17:49 CEST 2026
+[SUCCESS] 12x12_w2a3_c16x32x64_fps1200000 finished in 00:23:51 at Fr 31. Jul 05:41:40 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a3_c16x32x64/logs/log_1200000.txt
+[START] 12x12_w2a2_c12x24x36_fps400000 at Fr 31. Jul 05:41:40 CEST 2026
+[SUCCESS] 12x12_w2a2_c12x24x36_fps400000 finished in 00:18:17 at Fr 31. Jul 05:59:57 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a2_c12x24x36/logs/log_400000.txt
+[START] 12x12_w2a2_c12x24x36_fps800000 at Fr 31. Jul 05:59:57 CEST 2026
+[SUCCESS] 12x12_w2a2_c12x24x36_fps800000 finished in 00:18:22 at Fr 31. Jul 06:18:19 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a2_c12x24x36/logs/log_800000.txt
+[START] 12x12_w2a2_c12x24x36_fps1200000 at Fr 31. Jul 06:18:19 CEST 2026
+[SUCCESS] 12x12_w2a2_c12x24x36_fps1200000 finished in 00:18:21 at Fr 31. Jul 06:36:40 CEST 2026 — log: ./finn_out/gtsrb_12x12_w2a2_c12x24x36/logs/log_1200000.txt
+===== FINN RUN COMPLETED Fr 31. Jul 06:36:40 CEST 2026 =====
+Summary: 12 succeeded, 0 failed, 0 skipped
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Initializing FINN Overlay...
+Hardware expects input shape (per batch): (1000, 12, 12, 3)
+Downloading/Loading GTSRB Test Dataset...
+Downloading GTSRB_Final_Test_Images.zip ...
+Extracting GTSRB_Final_Test_Images.zip ...
+Downloading GTSRB_Final_Test_GT.zip ...
+Extracting GTSRB_Final_Test_GT.zip ...
+Successfully loaded 12630 test images.
+Packing 12000 images into 12 batches...
+Starting hardware inference via DMA...
+========================================
+EVALUATION RESULTS
+========================================
+Total Images Evaluated: 12000
+Total Execution Time: 0.0876 seconds
+Hardware Throughput: 136908.81 FPS
+Model Accuracy: 89.29%
+======================================== 
+
+Initializing FINN Overlay...
+Hardware expects input shape (per batch): (1000, 12, 12, 3)
+Downloading/Loading GTSRB Test Dataset...
+Successfully loaded 12630 test images.
+Packing 12000 images into 12 batches...
+Starting hardware inference via DMA...
+
+========================================
+          EVALUATION RESULTS
+========================================
+Total Images Evaluated: 12000
+Total Execution Time:   0.0827 seconds
+Hardware Throughput:    145172.65 FPS
+Model Accuracy:         89.29%
+========================================
+
+
+
+Initializing FINN Overlay...
+Hardware expects input shape (per batch): (1000, 12, 12, 3)
+Downloading/Loading GTSRB Test Dataset...
+Successfully loaded 12630 test images.
+Packing 12000 images into 12 batches...
+Starting hardware inference via DMA...
+
+========================================
+          EVALUATION RESULTS
+========================================
+Total Images Evaluated: 12000
+Total Execution Time:   0.0824 seconds
+Hardware Throughput:    145549.64 FPS
+Model Accuracy:         89.29%
+========================================
+
+
+Initializing FINN Overlay...
+Hardware expects input shape (per batch): (1000, 12, 12, 3)
+Downloading/Loading GTSRB Test Dataset...
+Successfully loaded 12630 test images.
+Packing 12000 images into 12 batches...
+Starting hardware inference via DMA...
+
+========================================
+          EVALUATION RESULTS
+========================================
+Total Images Evaluated: 12000
+Total Execution Time:   0.0827 seconds
+Hardware Throughput:    145079.33 FPS
+Model Accuracy:         89.29%
+========================================
+
+
+Initializing FINN Overlay...
+Hardware expects input shape (per batch): (1000, 12, 12, 3)
+Downloading/Loading GTSRB Test Dataset...
+Successfully loaded 12630 test images.
+Packing 12000 images into 12 batches...
+Starting hardware inference via DMA...
+
+========================================
+          EVALUATION RESULTS
+
+========================================
+Total Images Evaluated: 12000
+Total Latency:          0.0823 seconds
+Hardware Throughput:    145743.51 FPS
+Model Accuracy:         89.29%
+
+========================================
+
+Initializing FINN Overlay...
+Hardware expects input shape (per batch): (1000, 12, 12, 3)
+Downloading/Loading GTSRB Test Dataset...
+Successfully loaded 12630 test images.
+Packed 12000 images into 12 batches...
+Starting hardware inference via DMA...
+
+========================================
+          EVALUATION RESULTS
+
+========================================
+12000 Images Evaluated in batches of 1000
+Total Latency:          0.0826 seconds
+Hardware Throughput:    145243.87 FPS
+Model Accuracy:         89.29%
+
+========================================

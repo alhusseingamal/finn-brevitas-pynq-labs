@@ -1,0 +1,19 @@
+{
+  "Thresholding_rtl_0": 144,
+  "FMPadding_rtl_0": 196,
+  "ConvolutionInputGenerator_rtl_0": 198,
+  "MVAU_hls_0": 144,
+  "ConvolutionInputGenerator_rtl_1": 170,
+  "Pool_hls_0": 144,
+  "FMPadding_rtl_1": 64,
+  "ConvolutionInputGenerator_rtl_2": 66,
+  "MVAU_hls_1": 216,
+  "ConvolutionInputGenerator_rtl_3": 109,
+  "Pool_hls_1": 72,
+  "FMPadding_rtl_2": 50,
+  "ConvolutionInputGenerator_rtl_4": 94,
+  "MVAU_hls_2": 216,
+  "MVAU_hls_3": 144,
+  "MVAU_hls_4": 172,
+  "LabelSelect_hls_0": 43
+}

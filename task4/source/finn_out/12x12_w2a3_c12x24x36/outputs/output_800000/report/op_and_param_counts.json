@@ -1,0 +1,44 @@
+{
+  "Thresholding_rtl_0": {},
+  "FMPadding_rtl_0": {},
+  "ConvolutionInputGenerator_rtl_0": {},
+  "MVAU_hls_0": {
+    "op_mac_2bx8b": 46656,
+    "param_weight_2b": 324,
+    "param_threshold_32b": 12
+  },
+  "ConvolutionInputGenerator_rtl_1": {},
+  "Pool_hls_0": {},
+  "FMPadding_rtl_1": {},
+  "ConvolutionInputGenerator_rtl_2": {},
+  "MVAU_hls_1": {
+    "op_mac_2bx3b": 93312,
+    "param_weight_2b": 2592,
+    "param_threshold_32b": 24
+  },
+  "ConvolutionInputGenerator_rtl_3": {},
+  "Pool_hls_1": {},
+  "FMPadding_rtl_2": {},
+  "ConvolutionInputGenerator_rtl_4": {},
+  "MVAU_hls_2": {
+    "op_mac_2bx3b": 69984,
+    "param_weight_2b": 7776,
+    "param_threshold_32b": 36
+  },
+  "MVAU_hls_3": {
+    "op_mac_2bx3b": 20736,
+    "param_weight_2b": 20736,
+    "param_threshold_32b": 64
+  },
+  "MVAU_hls_4": {
+    "op_mac_2bx3b": 2752,
+    "param_weight_2b": 2752
+  },
+  "LabelSelect_hls_0": {},
+  "total": {
+    "op_mac_2bx8b": 46656.0,
+    "param_weight_2b": 34180.0,
+    "param_threshold_32b": 136.0,
+    "op_mac_2bx3b": 186784.0
+  }
+}
