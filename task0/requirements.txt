@@ -1,0 +1,8 @@
+brevitas==0.12.1
+finn-plus==1.4.0
+onnx==1.17.0
+onnxruntime==1.20.1
+qonnx==1.0.0
+scikit_learn==1.8.0
+torch==2.8.0
+torchvision==0.23.0

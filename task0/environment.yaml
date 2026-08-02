@@ -1,0 +1,27 @@
+name: nnlab
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+
+  # Core scientific stack (conda-forge preferred)
+  - scikit-learn=1.8.0
+  - numpy
+  - scipy
+
+  # PyTorch ecosystem (use official pytorch channel builds)
+  - pytorch=2.8.0
+  - torchvision=0.23.0
+  - cpuonly  # remove this if you want CUDA, replace with pytorch-cuda=XX.X
+
+  # Pip-only packages
+  - pip
+  - pip:
+      - brevitas==0.12.1
+      - finn-plus==1.4.0
+      - qonnx==1.0.0
+      - onnx==1.17.0
+      - onnxruntime==1.20.1
