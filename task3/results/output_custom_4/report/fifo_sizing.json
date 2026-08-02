@@ -1,0 +1,23 @@
+{
+  "fifo_depths": {
+    "StreamingFIFO_rtl_0": 2,
+    "StreamingFIFO_rtl_1": 32,
+    "StreamingFIFO_rtl_2": 2,
+    "StreamingFIFO_rtl_3": 2,
+    "StreamingFIFO_rtl_4": 2,
+    "StreamingFIFO_rtl_5": 2,
+    "StreamingFIFO_rtl_6": 2,
+    "StreamingFIFO_rtl_7": 2
+  },
+  "fifo_sizes": {
+    "StreamingFIFO_rtl_0": 1792,
+    "StreamingFIFO_rtl_1": 3584,
+    "StreamingFIFO_rtl_2": 64,
+    "StreamingFIFO_rtl_3": 64,
+    "StreamingFIFO_rtl_4": 64,
+    "StreamingFIFO_rtl_5": 140,
+    "StreamingFIFO_rtl_6": 14,
+    "StreamingFIFO_rtl_7": 16
+  },
+  "total_fifo_size_kB": 0
+}

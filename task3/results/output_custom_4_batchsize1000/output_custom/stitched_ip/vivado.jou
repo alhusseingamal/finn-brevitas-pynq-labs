@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sun Aug  2 16:14:13 2026
+# Process ID: 3311716
+# Current directory: /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/FINN_TMP/vivado_stitch_proj_slgr5drb
+# Command line: vivado -mode batch -source make_project.tcl
+# Log file: /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/FINN_TMP/vivado_stitch_proj_slgr5drb/vivado.log
+# Journal file: /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/FINN_TMP/vivado_stitch_proj_slgr5drb/vivado.jou
+# Running On: i83labpc01, OS: Linux, CPU Frequency: 4403.723 MHz, CPU Physical cores: 6, Host memory: 16533 MB
+#-----------------------------------------------------------
+source make_project.tcl

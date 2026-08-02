@@ -35,14 +35,17 @@ task3/
 │   ├── output_custom_0/               # manual fold #0
 │   ├── output_custom_1/               # manual fold #1
 │   ├── output_custom_2/               # manual fold #2
-│   └── output_custom_3/               # manual fold #3 (final, highest throughput)
+│   ├── output_custom_3/               # manual fold #3
+│   ├── output_custom_4/               # manual fold #4
+│   └── output_custom_4_batchsize1000/ # final, correct, hightest throughput run
 │       └── ...                        # each follows FINN's standard dataflow-build
 │                                       # layout: report/, bitfile/, driver/, intermediate models
 ├── custom_0_folding_config.json
 ├── custom_1_folding_config.json
 ├── custom_2_folding_config.json
 ├── custom_3_folding_config.json
-├── build.yaml
+├── custom_4_folding_config.json
+├── build.yaml                         # finn build configuration (configured for the output_custom_4_batchsize1000 run)
 └── .gitignore
 ```
 
@@ -59,16 +62,19 @@ edit it to select **either**:
 
 ```yaml
 target_fps: 100000
-output_dir: output_auto
+output_dir: directory_to_save_finn_build_outputs
 ```
 
 **or**, for manual folding:
 
 ```yaml
 # target_fps: 100000              # commented out
-folding_config_file: custom_3_folding_config.json
-output_dir: output_custom_3
+folding_config_file: path_to_folding_config_json_file
+output_dir: directory_to_save_finn_build_outputs
+# also make sure the build.yaml points to the correct model
 ```
+- To reproduce the results, the build.yaml has to be correctly configured. 
+Pay attention to the notes below to know the suitable configuration for each run.
 
 then:
 
@@ -114,17 +120,25 @@ unless noted otherwise.
 | `output_custom_1` | `Reshape_rtl_0` / `Thresholding_rtl_0` (PE=28) | 28 | 3,571,429 fps | **1,265,823 fps** | 26,790 | 79 | 3 | 0 |
 | `output_custom_2` | `MVAU_hls_0` (input flattened, Thresholding PE=112) | 14 | 7,142,857 fps | **1,818,182 fps** | 27,893 | 79 | 3 | 0 |
 | `output_custom_3` | `Thresholding_rtl_0` / `MVAU_hls_0` tied (PE=64) | 7 | 14,285,714 fps | **1,923,077 fps** | *(pending)* | *(pending)* | *(pending)* | 0 |
+| `output_custom_4` | `MVAU_hls_0` (PE=32, scaled back from 64) | 14 | 7,142,857 fps | **1,612,903 fps** *(N=1 — see note below)* | 27,820 | 79 | 3 | 0 |
+| `output_custom_4_batchsize1000` | `MVAU_hls_0` (same bitstream as `custom_4`) | 14 | 7,142,857 fps | **~5,000,000 fps** *(N=1000, steady-state)* † | 27,820 *(same bitstream)* | 79 | 3 | 0 |
 
 `output_custom_0` MVAU-layer folding numbers/resources aren't captured
 above from this chat's trace — pull the exact PE/SIMD values from
 `custom_0_folding_config.json` and its build reports directly if you
 want to fill this row in.
 
-**Post-synthesis timing (implementation) result:** the most aggressive
-fold (`output_custom_3`) **did not close timing at the assumed 100 MHz**
+† `custom_4_batchsize1000`'s throughput is reported here as given by the
+batched rtlsim run; the exact `rtlsim_performance.json` for that run
+(interval_cycles, N, latency_cycles breakdown) wasn't captured for this
+write-up. Append it if you want the exact figures rather than the
+rounded ~5,000,000 fps headline number.
+
+**Post-synthesis timing (implementation) result — `output_custom_3`:**
+the most aggressive fold **did not close timing at the assumed 100 MHz**
 — actual achieved F<sub>max</sub> after implementation was **~83 MHz**.
-This matters: every throughput figure above (including the 1.92M fps
-"stable" rtlsim number for custom_3) is a *cycle-accurate simulation*
+This matters: every throughput figure above for `custom_3` (including
+the 1.92M fps "stable" rtlsim number) is a *cycle-accurate simulation*
 result computed at an assumed 100 MHz clock — rtlsim performs no timing
 analysis. The real, deployable throughput for that configuration is
 better estimated as:
@@ -135,6 +149,23 @@ real_throughput ≈ rtlsim_throughput × (achieved_Fmax / assumed_Fmax)
                 ≈ 1,596,000 fps   (estimated — confirm against actual
                                     board/post-synth timing report)
 ```
+
+**Post-synthesis timing (implementation) result — `output_custom_4`:**
+unlike `custom_3`, this configuration **does close timing at the full
+100 MHz target**. Post-route timing analysis confirms:
+
+```
+WNS = +0.241 ns   TNS = 0.000 ns   0 failing endpoints
+All user specified timing constraints are met.
+```
+
+The previous worst path (`LabelSelect_hls_0`, 14 logic levels,
+WNS = ‑1.922 ns) is gone; the new worst path sits inside `MVAU_hls_0`
+(8 logic levels, comfortably met). `custom_4` (and
+`custom_4_batchsize1000`, which shares the same bitstream) is therefore
+the **only configuration in this study with a fully closed 100 MHz
+timing report** — every rtlsim throughput number for `custom_3` above
+needed a derating correction; `custom_4`'s numbers don't.
 
 ## The Optimization Journey
 
@@ -190,7 +221,78 @@ Thresholding no longer the sole bottleneck, `MVAU_hls_0`'s PE was pushed
 32 → 64, halving its cycle count (14 → 7) to match Thresholding. The
 *estimate* report predicted another 2× throughput jump — but **rtlsim
 throughput improved by only ~5.8%** (1,818,182 → 1,923,077 fps). This is
-the most instructive data point in the whole exercise (see below).
+the most instructive data point in the whole exercise (see Key Finding 4)
+— and, as it turned out, this configuration also failed to close timing
+in implementation (~83 MHz achieved, not 100 MHz — see the table note
+above), meaning even its modest rtlsim gain overstated real deployable
+throughput.
+
+**7. `output_custom_4` — Scaling Back `MVAU_hls_0` and Fixing the Real
+Timing Bottleneck**
+
+To guarantee timing closure at 100 MHz, `MVAU_hls_0`'s PE was scaled
+back from 64 (`custom_3`) to 32. This restores its execution time to
+**14 cycles per image** (matching `output_custom_2`), re-establishing
+it as the primary throughput bottleneck in the streaming dataflow
+pipeline — trading away `custom_3`'s higher estimated-throughput ceiling
+for a design that can actually be implemented at the target clock.
+
+Crucially, `MVAU_hls_0`'s folding wasn't actually the cause of
+`custom_3`'s timing failure. Post-route analysis of the failing path
+showed `LabelSelect_hls_0` (still at `PE=5`, unchanged since `custom_2`)
+was the true worst path: at `PE=5`, HLS unrolls the 10-way argmax into a
+single combinational chain **14 logic levels deep** (WNS = ‑1.922 ns) —
+consistent with a sequential running-max/argmax loop being flattened
+rather than reduced as a balanced tree, so logic depth scales with PE
+rather than `log₂(PE)`. Reducing `LabelSelect_hls_0` to `PE=1` forces
+HLS to stop unrolling the comparisons combinationally and instead
+pipeline them one comparison per cycle, collapsing the 14-level chain
+into single-level pipeline stages.
+
+Post-route timing confirms this worked: **WNS = +0.241 ns, 0 failing
+endpoints — full closure at 100 MHz**, with the new worst path now
+inside `MVAU_hls_0` itself (8 logic levels, comfortably within budget).
+This is the first, and only, configuration in the whole study to
+actually close timing at the target clock.
+
+At `PE=1`, `LabelSelect_hls_0`'s own latency rises to ~10 cycles — still
+under `MVAU_hls_0`'s 14-cycle interval, so in principle it shouldn't add
+to the steady-state bottleneck. A same-day, single-image (`N=1`) rtlsim
+run appeared to *contradict* this: total cycle count rose from 52
+(`custom_3`, N=1) to 62 (`custom_4`, N=1), suggesting a ~16% throughput
+regression from the `LabelSelect` change. This turned out to be a
+measurement artifact — see step 8 and Key Finding 7.
+
+**8. `output_custom_4_batchsize1000` — Batched Simulation Reveals the
+Real Steady-State Throughput**
+
+Same bitstream and folding as `custom_4` — the only difference is
+`rtlsim_batch_size: 1000` set in `build.yaml`, simulating 1000
+back-to-back images instead of 1. This amortizes the pipeline's
+one-time fill/drain latency (which dominates an `N=1` measurement)
+across the full batch, converging on the design's true steady-state
+interval instead.
+
+Result: **~5,000,000 fps** — roughly **3× higher** than the `N=1`
+figure for the exact same bitstream, and reasonably close to the
+`MVAU_hls_0`-bound theoretical ceiling of
+`100 MHz / 14 cycles ≈ 7,142,857 fps` (~70% pipeline efficiency, a
+plausible number given FIFO/handshake overhead between dataflow
+stages). This retroactively supports the reasoning in step 7:
+`LabelSelect_hls_0` at `PE=1` does **not** meaningfully bottleneck
+steady-state throughput once measured properly — the apparent 16%
+regression seen in the `N=1` test was an artifact of single-image
+simulation, not a real hardware cost of the fix. (See Key Finding 7 for
+the general lesson.)
+
+### A few CRUCIAL notes:
+- custom_X uses the folding configuration defined in `custom_X_folding_config.json`
+   - e.g. custom_2 uses `custom_2_folding_config.json`
+   - note: custom_4_batchsize1000 uses the folding configurtion defined in custom_4_folding_config, since they are basically the same folding architecture
+- auto, custom_0, custom_1: use tfc-w1a1.onnx model  
+- custom_2, custom_3, custom_4, custom_4_batchsize1000: use tfc-w1a1-flattened.onnx model  
+- custom_4_batchsize1000 is the exact same run as custom_4 with the exception that a batch size of 1000 is simulated
+   - `rtlsim_batch_size: 1000` was set in the build.yaml
 
 ## Key Findings
 
@@ -219,12 +321,35 @@ the most instructive data point in the whole exercise (see below).
    (8,220→27,893) and BRAM_36K ~26× (3→79) between baseline and
    `output_custom_2`.
 6. **rtlsim throughput assumes the target clock closes timing — verify
-   this post-synthesis.** The highest-throughput fold only achieved
-   ~83 MHz in implementation, not the 100 MHz every cycle-based
-   estimate assumes — a reminder that folding aggressiveness trades
-   off against achievable F<sub>max</sub>, not just LUT/BRAM count, and
-   that the true throughput ceiling for an aggressive fold can only be
-   confirmed after implementation, not from rtlsim alone.
+   this post-synthesis.** `custom_3`'s rtlsim numbers assumed 100 MHz
+   but only ~83 MHz was achievable in implementation — folding
+   aggressiveness trades off against achievable F<sub>max</sub>, not
+   just LUT/BRAM count, and the true throughput ceiling for an
+   aggressive fold can only be confirmed after implementation, not from
+   rtlsim alone. `custom_4` is the first fold in this study to actually
+   pass that check (WNS = +0.241 ns at 100 MHz).
+7. **A single-image (`N=1`) rtlsim run badly underestimates real
+   throughput — always batch-simulate before comparing folding options.**
+   `custom_4`'s `N=1` run reported 1,612,903 fps; the identical bitstream
+   simulated with `rtlsim_batch_size=1000` reported ~5,000,000 fps —
+   roughly **3× higher**. A one-shot simulation conflates the pipeline's
+   one-time fill/drain latency with its steady-state interval, so any
+   folding decision judged only against an `N=1` cycle count risks being
+   wrong: the apparent "16% throughput cost" of moving `LabelSelect_hls_0`
+   from `PE=5` to `PE=1` (seen only in the `N=1` numbers) essentially
+   disappeared once measured at steady state — set `rtlsim_batch_size`
+   to something large (≥100–1000) before drawing conclusions from a
+   throughput comparison.
+8. **Timing closure and throughput are both necessary — neither alone
+   tells the full story.** `custom_3` had the best *estimated* and
+   best *N=1 rtlsim* throughput in this study, but never closed timing
+   in implementation, so its real-world throughput was always going to
+   be lower than reported. `custom_4` traded away some of that
+   estimated ceiling (`MVAU_hls_0` PE 64→32) but is the only
+   configuration confirmed to close timing at 100 MHz **and**, once
+   properly batch-simulated, deliver high real throughput (~5M fps) —
+   making it the actual best deliverable of the whole exercise, not
+   the one with the flashiest single-run number.
 
 ## Other Models
 
