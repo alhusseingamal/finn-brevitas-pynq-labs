@@ -1,0 +1,17 @@
+# Basic accelerator configuration
+board: Pynq-Z2                  # Target FPGA
+shell_flow_type: vivado_zynq    # Integration flow
+synth_clk_period_ns: 10.0       # 100 MHz clock
+
+# Build options
+generate_outputs:
+  - estimate_reports
+  - stitched_ip
+  - rtlsim_performance
+  - bitfile
+  - pynq_driver
+
+model_path: ./models/tfc-w1a1.onnx
+# target_fps: 100000
+folding_config_file: ./custom_folding_config.json
+output_dir: output_custom

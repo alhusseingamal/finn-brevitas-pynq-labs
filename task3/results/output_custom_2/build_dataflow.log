@@ -1,0 +1,1063 @@
+[2026-08-01 23:20:26,322]INFO:Intermediate outputs will be generated in /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP
+[2026-08-01 23:20:26,322]INFO:Final outputs will be generated in /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/output_custom
+[2026-08-01 23:20:26,322]INFO:Build log is at /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/output_custom/build_dataflow.log
+[2026-08-01 23:20:26,322]INFO:Building dataflow accelerator from /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/models/tfc-w1a1-flattened.onnx
+[2026-08-01 23:20:26,327]INFO:Running step: step_qonnx_to_finn [1/20]
+[2026-08-01 23:20:26,332]INFO:Running step: step_tidy_up [2/20]
+[2026-08-01 23:20:26,365]INFO:Running step: step_streamline [3/20]
+[2026-08-01 23:20:27,845]INFO:Running step: step_convert_to_hw [4/20]
+[2026-08-01 23:20:27,855]WARNING:MultiThreshold (MultiThreshold_0) layout () does not match input tensor layout (['N', 'C', 'H', 'W']).
+[2026-08-01 23:20:27,855]WARNING:MultiThreshold (MultiThreshold_0) layout () does not match output tensor layout (['N', 'C']).
+[2026-08-01 23:20:27,869]INFO:Running step: step_create_dataflow_partition [5/20]
+[2026-08-01 23:20:27,889]INFO:Running step: step_specialize_layers [6/20]
+[2026-08-01 23:20:27,897]INFO:Running step: step_target_fps_parallelization [7/20]
+[2026-08-01 23:20:27,902]INFO:Running step: step_apply_folding_config [8/20]
+[2026-08-01 23:20:27,903]WARNING:
+Unused HW configurations: Reshape_rtl_0
+[2026-08-01 23:20:27,909]INFO:Running step: step_minimize_bit_width [9/20]
+[2026-08-01 23:20:27,917]WARNING:Clipping some thresholds in MVAU_hls_1
+[2026-08-01 23:20:27,919]WARNING:Clipping some thresholds in MVAU_hls_2
+[2026-08-01 23:20:27,930]INFO:Running step: step_transpose_decomposition [10/20]
+[2026-08-01 23:20:27,935]INFO:Running step: step_generate_estimate_reports [11/20]
+[2026-08-01 23:20:27,960]INFO:Running step: step_set_fifo_depths [12/20]
+[2026-08-01 23:36:01,517]INFO:Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /Software/xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab work.glbl work.finn_design_wrapper -relax -prj rtlsim.prj -dll -s finn_design_wrapper -define FINN_SIMULATION -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_16 -L floating_point_v7_0_21 -L floating_point_v7_1_18 -L floating_point_v7_1_15 -L floating_point_v7_1_19 
+Multi-threading is on. Using 10 slave threads.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/Software/xilinx/Vivado/2023.2/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_0_0/synth/finn_design_StreamingFIFO_rtl_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_Thresholding_rtl_0_0/synth/finn_design_Thresholding_rtl_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_Thresholding_rtl_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_1_0/synth/finn_design_StreamingFIFO_rtl_1_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0_Matrix_Vector_Activate_Stream_Batch.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_Matrix_Vector_Activate_Stream_Batch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_regslice_both
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0_sparsemux_15_3_112_1_1.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_sparsemux_15_3_112_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_0/synth/finn_design_MVAU_hls_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_wstrm_0/synth/finn_design_MVAU_hls_0_wstrm_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_0_wstrm_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_2_0/synth/finn_design_StreamingFIFO_rtl_2_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/1bf8/hdl/verilog/MVAU_hls_1_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/1bf8/hdl/verilog/MVAU_hls_1_Matrix_Vector_Activate_Stream_Batch.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_Matrix_Vector_Activate_Stream_Batch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/1bf8/hdl/verilog/MVAU_hls_1_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_regslice_both
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/1bf8/hdl/verilog/MVAU_hls_1.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_0/synth/finn_design_MVAU_hls_1_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_wstrm_0/synth/finn_design_MVAU_hls_1_wstrm_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_1_wstrm_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_3_0/synth/finn_design_StreamingFIFO_rtl_3_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_3_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/a293/hdl/verilog/MVAU_hls_2_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/a293/hdl/verilog/MVAU_hls_2_Matrix_Vector_Activate_Stream_Batch.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_Matrix_Vector_Activate_Stream_Batch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/a293/hdl/verilog/MVAU_hls_2_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_regslice_both
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/a293/hdl/verilog/MVAU_hls_2.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_0/synth/finn_design_MVAU_hls_2_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_wstrm_0/synth/finn_design_MVAU_hls_2_wstrm_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_2_wstrm_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_4_0/synth/finn_design_StreamingFIFO_rtl_4_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_4_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/b8f9/hdl/verilog/MVAU_hls_3_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/b8f9/hdl/verilog/MVAU_hls_3_Matrix_Vector_Activate_Stream_Batch.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_Matrix_Vector_Activate_Stream_Batch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/b8f9/hdl/verilog/MVAU_hls_3_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_regslice_both
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/b8f9/hdl/verilog/MVAU_hls_3.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_0/synth/finn_design_MVAU_hls_3_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_3_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_wstrm_0/synth/finn_design_MVAU_hls_3_wstrm_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_3_wstrm_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_5_0/synth/finn_design_StreamingFIFO_rtl_5_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_5_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingDataWidthConverter_rtl_0_0/synth/finn_design_StreamingDataWidthConverter_rtl_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingDataWidthConverter_rtl_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_6_0/synth/finn_design_StreamingFIFO_rtl_6_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_6_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/916d/hdl/verilog/LabelSelect_hls_0_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/916d/hdl/verilog/LabelSelect_hls_0_LabelSelect_hls_0_Pipeline_VITIS_LOOP_199_3.v" into library work
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0_LabelSelect_hls_0_Pipeline_VITIS_LOOP_199_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/916d/hdl/verilog/LabelSelect_hls_0_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0_regslice_both
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/916d/hdl/verilog/LabelSelect_hls_0.v" into library work
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_LabelSelect_hls_0_0/synth/finn_design_LabelSelect_hls_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_LabelSelect_hls_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_7_0/synth/finn_design_StreamingFIFO_rtl_7_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_7_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/synth/finn_design.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_imp_7OH4JA
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_imp_ZIW0NT
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_imp_1WP2WTL
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_imp_U0RWZQ
+INFO: [VRFC 10-311] analyzing module finn_design
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_z1jwepj1/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_z1jwepj1/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_z1jwepj1/fifo_gauge.sv:64]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_z1jwepj1/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_z1jwepj1/StreamingFIFO_rtl_0.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv:112]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv" into library work
+INFO: [VRFC 10-311] analyzing module thresholding
+WARNING: [VRFC 10-3467] initial value of parameter 'K' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv:55]
+WARNING: [VRFC 10-3467] initial value of parameter 'N' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv:56]
+WARNING: [VRFC 10-3467] initial value of parameter 'C' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv:57]
+WARNING: [VRFC 10-3467] initial value of parameter 'PE' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv:58]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module thresholding_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'WI' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv:42]
+WARNING: [VRFC 10-3467] initial value of parameter 'WT' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv:43]
+WARNING: [VRFC 10-3467] initial value of parameter 'N' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv:44]
+WARNING: [VRFC 10-3467] initial value of parameter 'USE_AXILITE' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv:56]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/Thresholding_rtl_0.v" into library work
+INFO: [VRFC 10-311] analyzing module Thresholding_rtl_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/StreamingFIFO_rtl_1.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/MVAU_hls_0_memstream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_memstream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:112]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'axilite' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:32]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/memstream_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/memstream_axi.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/memstream_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/memstream_axi.sv:36]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/memstream.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/memstream.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/memstream.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/memstream.sv:36]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/StreamingFIFO_rtl_2.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/MVAU_hls_1_memstream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_memstream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:112]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'axilite' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:32]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream_axi' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/StreamingFIFO_rtl_3.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/MVAU_hls_2_memstream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_memstream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:112]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'axilite' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:32]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream_axi' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/StreamingFIFO_rtl_4.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_4
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/MVAU_hls_3_memstream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_memstream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:112]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'axilite' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:32]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream_axi' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_l616g3x4/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_l616g3x4/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_l616g3x4/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_l616g3x4/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_l616g3x4/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_l616g3x4/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_l616g3x4/StreamingFIFO_rtl_5.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module dwc_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'IBITS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'OBITS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv:36]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv" into library work
+INFO: [VRFC 10-311] analyzing module dwc
+WARNING: [VRFC 10-3467] initial value of parameter 'IBITS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'OBITS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv:36]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/StreamingDataWidthConverter_rtl_0.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingDataWidthConverter_rtl_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_pnb1dqmf/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_pnb1dqmf/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_pnb1dqmf/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_pnb1dqmf/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_pnb1dqmf/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_pnb1dqmf/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_pnb1dqmf/StreamingFIFO_rtl_6.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_6
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/StreamingFIFO_rtl_7.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_7
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/hdl/finn_design_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_wrapper
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'config_address' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:164]
+WARNING: [VRFC 10-3091] actual bit length 3584 differs from formal bit length 1 for port 'sidx' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_LabelSelect_hls_0_0/synth/finn_design_LabelSelect_hls_0_0.v" Line 53. Module finn_design_LabelSelect_hls_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_0/synth/finn_design_MVAU_hls_0_0.v" Line 53. Module finn_design_MVAU_hls_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_wstrm_0/synth/finn_design_MVAU_hls_0_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_0_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/MVAU_hls_0_memstream_wrapper.v" Line 32. Module MVAU_hls_0_memstream_wrapper(AXILITE_ADDR_WIDTH=13,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b01110,WIDTH=32'b0111000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_0_h0943ym1/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01101,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b0111000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b01110,WIDTH=32'b0111000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_0_h0943ym1/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_0/synth/finn_design_MVAU_hls_1_0.v" Line 53. Module finn_design_MVAU_hls_1_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_wstrm_0/synth/finn_design_MVAU_hls_1_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_1_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/MVAU_hls_1_memstream_wrapper.v" Line 32. Module MVAU_hls_1_memstream_wrapper(AXILITE_ADDR_WIDTH=9,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_1_8tpbvyo7/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01001,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b010000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_1_8tpbvyo7/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_0/synth/finn_design_MVAU_hls_2_0.v" Line 53. Module finn_design_MVAU_hls_2_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_wstrm_0/synth/finn_design_MVAU_hls_2_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_2_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/MVAU_hls_2_memstream_wrapper.v" Line 32. Module MVAU_hls_2_memstream_wrapper(AXILITE_ADDR_WIDTH=9,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_2_q8rzagbl/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01001,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b010000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_2_q8rzagbl/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_0/synth/finn_design_MVAU_hls_3_0.v" Line 53. Module finn_design_MVAU_hls_3_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_wstrm_0/synth/finn_design_MVAU_hls_3_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_3_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/MVAU_hls_3_memstream_wrapper.v" Line 32. Module MVAU_hls_3_memstream_wrapper(AXILITE_ADDR_WIDTH=7,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b010,WIDTH=32'b0101000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_3_bl5vtbe5/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b0111,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b0101000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b010,WIDTH=32'b0101000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_3_bl5vtbe5/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/StreamingDataWidthConverter_rtl_0.v" Line 32. Module StreamingDataWidthConverter_rtl_0(AXI_IBITS=72,AXI_OBITS=40) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv" Line 34. Module dwc_axi(IBITS=32'b01000110,OBITS=32'b0100011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv" Line 34. Module dwc(IBITS=32'b01000110,OBITS=32'b0100011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_0_0/synth/finn_design_StreamingFIFO_rtl_0_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_z1jwepj1/StreamingFIFO_rtl_0.v" Line 32. Module StreamingFIFO_rtl_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01110000000,COUNT_WIDTH=32'b011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_1_0/synth/finn_design_StreamingFIFO_rtl_1_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_1_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/StreamingFIFO_rtl_1.v" Line 32. Module StreamingFIFO_rtl_1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01110000,COUNT_WIDTH=32'b011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_2_0/synth/finn_design_StreamingFIFO_rtl_2_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_2_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/StreamingFIFO_rtl_2.v" Line 32. Module StreamingFIFO_rtl_2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_3_0/synth/finn_design_StreamingFIFO_rtl_3_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_3_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/StreamingFIFO_rtl_3.v" Line 32. Module StreamingFIFO_rtl_3 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_4_0/synth/finn_design_StreamingFIFO_rtl_4_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_4_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/StreamingFIFO_rtl_4.v" Line 32. Module StreamingFIFO_rtl_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_5_0/synth/finn_design_StreamingFIFO_rtl_5_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_5_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_l616g3x4/StreamingFIFO_rtl_5.v" Line 32. Module StreamingFIFO_rtl_5 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01001000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_6_0/synth/finn_design_StreamingFIFO_rtl_6_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_6_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_pnb1dqmf/StreamingFIFO_rtl_6.v" Line 32. Module StreamingFIFO_rtl_6 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0101000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_7_0/synth/finn_design_StreamingFIFO_rtl_7_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_7_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/StreamingFIFO_rtl_7.v" Line 32. Module StreamingFIFO_rtl_7 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_Thresholding_rtl_0_0/synth/finn_design_Thresholding_rtl_0_0.v" Line 53. Module finn_design_Thresholding_rtl_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/Thresholding_rtl_0.v" Line 35. Module Thresholding_rtl_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv" Line 41. Module thresholding_axi(WI=32'b01000,WT=32'b01001,N=32'b01,C=32'b01110000,PE=32'b01110000,SIGNED=1'b0,FPARG=1'b0,SETS=32'b01,THRESHOLDS_PATH="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_Thresholding_rtl_0_wjco73gb/Thresholding_rtl_0_",USE_AXILITE=1'b0,DEPTH_TRIGGER_URAM=32'b0,DEPTH_TRIGGER_BRAM=32'b0,DEEP_PIPELINE=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv" Line 54. Module thresholding(K=32'b01001,N=32'b01,C=32'b01110000,PE=32'b01110000,SIGNED=1'b0,FPARG=1'b0,THRESHOLDS_PATH="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_Thresholding_rtl_0_wjco73gb/Thresholding_rtl_0_",USE_CONFIG=1'b0,DEPTH_TRIGGER_URAM=32'b0,DEPTH_TRIGGER_BRAM=32'b0,DEEP_PIPELINE=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_LabelSelect_hls_0_0/synth/finn_design_LabelSelect_hls_0_0.v" Line 53. Module finn_design_LabelSelect_hls_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_0/synth/finn_design_MVAU_hls_0_0.v" Line 53. Module finn_design_MVAU_hls_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_wstrm_0/synth/finn_design_MVAU_hls_0_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_0_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_0/MVAU_hls_0_memstream_wrapper.v" Line 32. Module MVAU_hls_0_memstream_wrapper(AXILITE_ADDR_WIDTH=13,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b01110,WIDTH=32'b0111000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_0_h0943ym1/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01101,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b0111000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b01110,WIDTH=32'b0111000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_0_h0943ym1/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_0/synth/finn_design_MVAU_hls_1_0.v" Line 53. Module finn_design_MVAU_hls_1_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_wstrm_0/synth/finn_design_MVAU_hls_1_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_1_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_1/MVAU_hls_1_memstream_wrapper.v" Line 32. Module MVAU_hls_1_memstream_wrapper(AXILITE_ADDR_WIDTH=9,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_1_8tpbvyo7/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01001,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b010000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_1_8tpbvyo7/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_0/synth/finn_design_MVAU_hls_2_0.v" Line 53. Module finn_design_MVAU_hls_2_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_wstrm_0/synth/finn_design_MVAU_hls_2_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_2_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_2/MVAU_hls_2_memstream_wrapper.v" Line 32. Module MVAU_hls_2_memstream_wrapper(AXILITE_ADDR_WIDTH=9,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_2_q8rzagbl/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01001,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b010000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_2_q8rzagbl/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_0/synth/finn_design_MVAU_hls_3_0.v" Line 53. Module finn_design_MVAU_hls_3_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_wstrm_0/synth/finn_design_MVAU_hls_3_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_3_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/MVAU_hls_3_memstream_wrapper.v" Line 32. Module MVAU_hls_3_memstream_wrapper(AXILITE_ADDR_WIDTH=7,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b010,WIDTH=32'b0101000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_3_bl5vtbe5/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b0111,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b0101000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b010,WIDTH=32'b0101000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_3_bl5vtbe5/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/StreamingDataWidthConverter_rtl_0.v" Line 32. Module StreamingDataWidthConverter_rtl_0(AXI_IBITS=72,AXI_OBITS=40) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv" Line 34. Module dwc_axi(IBITS=32'b01000110,OBITS=32'b0100011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv" Line 34. Module dwc(IBITS=32'b01000110,OBITS=32'b0100011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_0_0/synth/finn_design_StreamingFIFO_rtl_0_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_z1jwepj1/StreamingFIFO_rtl_0.v" Line 32. Module StreamingFIFO_rtl_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01110000000,COUNT_WIDTH=32'b011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_1_0/synth/finn_design_StreamingFIFO_rtl_1_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_1_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_512co3gt/StreamingFIFO_rtl_1.v" Line 32. Module StreamingFIFO_rtl_1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01110000,COUNT_WIDTH=32'b011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_2_0/synth/finn_design_StreamingFIFO_rtl_2_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_2_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_vflgrn6r/StreamingFIFO_rtl_2.v" Line 32. Module StreamingFIFO_rtl_2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_3_0/synth/finn_design_StreamingFIFO_rtl_3_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_3_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_sf6_2tf3/StreamingFIFO_rtl_3.v" Line 32. Module StreamingFIFO_rtl_3 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_4_0/synth/finn_design_StreamingFIFO_rtl_4_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_4_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_fl2bme6n/StreamingFIFO_rtl_4.v" Line 32. Module StreamingFIFO_rtl_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_6hr6ubio/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_wcudzcm5/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_5_0/synth/finn_design_StreamingFIFO_rtl_5_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_5_0 doesn't have a timescale but at least one module in design has a timescale.
+INFO: [Common 17-14] Message 'XSIM 43-4099' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.glbl
+Compiling module work.LabelSelect_hls_0_flow_control_l...
+Compiling module work.LabelSelect_hls_0_LabelSelect_hl...
+Compiling module work.LabelSelect_hls_0_regslice_both(...
+Compiling module work.LabelSelect_hls_0_regslice_both(...
+Compiling module work.LabelSelect_hls_0
+Compiling module work.finn_design_LabelSelect_hls_0_0
+Compiling module work.MVAU_hls_0_sparsemux_15_3_112_1_...
+Compiling module work.MVAU_hls_0_flow_control_loop_pip...
+Compiling module work.MVAU_hls_0_Matrix_Vector_Activat...
+Compiling module work.MVAU_hls_0_regslice_both(DataWid...
+Compiling module work.MVAU_hls_0_regslice_both(DataWid...
+Compiling module work.MVAU_hls_0_regslice_both
+Compiling module work.MVAU_hls_0
+Compiling module work.finn_design_MVAU_hls_0_0
+Compiling module work.axilite(ADDR_WIDTH=32'b01101,DAT...
+Compiling module work.memstream(SETS=32'b01,DEPTH=32'b...
+Compiling module work.memstream_axi(SETS=32'b01,DEPTH=...
+Compiling module work.MVAU_hls_0_memstream_wrapper(AXI...
+Compiling module work.finn_design_MVAU_hls_0_wstrm_0
+Compiling module work.MVAU_hls_0_imp_7OH4JA
+Compiling module work.MVAU_hls_1_flow_control_loop_pip...
+Compiling module work.MVAU_hls_1_Matrix_Vector_Activat...
+Compiling module work.MVAU_hls_1_regslice_both
+Compiling module work.MVAU_hls_1_regslice_both(DataWid...
+Compiling module work.MVAU_hls_1
+Compiling module work.finn_design_MVAU_hls_1_0
+Compiling module work.axilite(ADDR_WIDTH=32'b01001,DAT...
+Compiling module work.memstream(SETS=32'b01,DEPTH=32'b...
+Compiling module work.memstream_axi(SETS=32'b01,DEPTH=...
+Compiling module work.MVAU_hls_1_memstream_wrapper(AXI...
+Compiling module work.finn_design_MVAU_hls_1_wstrm_0
+Compiling module work.MVAU_hls_1_imp_ZIW0NT
+Compiling module work.MVAU_hls_2_flow_control_loop_pip...
+Compiling module work.MVAU_hls_2_Matrix_Vector_Activat...
+Compiling module work.MVAU_hls_2_regslice_both
+Compiling module work.MVAU_hls_2_regslice_both(DataWid...
+Compiling module work.MVAU_hls_2
+Compiling module work.finn_design_MVAU_hls_2_0
+Compiling module work.memstream(SETS=32'b01,DEPTH=32'b...
+Compiling module work.memstream_axi(SETS=32'b01,DEPTH=...
+Compiling module work.MVAU_hls_2_memstream_wrapper(AXI...
+Compiling module work.finn_design_MVAU_hls_2_wstrm_0
+Compiling module work.MVAU_hls_2_imp_1WP2WTL
+Compiling module work.MVAU_hls_3_flow_control_loop_pip...
+Compiling module work.MVAU_hls_3_Matrix_Vector_Activat...
+Compiling module work.MVAU_hls_3_regslice_both
+Compiling module work.MVAU_hls_3_regslice_both(DataWid...
+Compiling module work.MVAU_hls_3_regslice_both(DataWid...
+Compiling module work.MVAU_hls_3
+Compiling module work.finn_design_MVAU_hls_3_0
+Compiling module work.axilite(ADDR_WIDTH=32'b0111,DATA...
+Compiling module work.memstream(SETS=32'b01,DEPTH=32'b...
+Compiling module work.memstream_axi(SETS=32'b01,DEPTH=...
+Compiling module work.MVAU_hls_3_memstream_wrapper(AXI...
+Compiling module work.finn_design_MVAU_hls_3_wstrm_0
+Compiling module work.MVAU_hls_3_imp_U0RWZQ
+Compiling module work.dwc(IBITS=32'b01000110,OBITS=32'...
+Compiling module work.dwc_axi(IBITS=32'b01000110,OBITS...
+Compiling module work.StreamingDataWidthConverter_rtl_...
+Compiling module work.fifo_gauge(WIDTH=32'b01110000000...
+Compiling module work.StreamingFIFO_rtl_0
+Compiling module work.finn_design_StreamingFIFO_rtl_0_...
+Compiling module work.fifo_gauge(WIDTH=32'b01110000,CO...
+Compiling module work.StreamingFIFO_rtl_1
+Compiling module work.finn_design_StreamingFIFO_rtl_1_...
+Compiling module work.fifo_gauge(WIDTH=32'b0100000,COU...
+Compiling module work.StreamingFIFO_rtl_2
+Compiling module work.finn_design_StreamingFIFO_rtl_2_...
+Compiling module work.fifo_gauge(WIDTH=32'b0100000,COU...
+Compiling module work.StreamingFIFO_rtl_3
+Compiling module work.finn_design_StreamingFIFO_rtl_3_...
+Compiling module work.StreamingFIFO_rtl_4
+Compiling module work.finn_design_StreamingFIFO_rtl_4_...
+Compiling module work.fifo_gauge(WIDTH=32'b01001000,CO...
+Compiling module work.StreamingFIFO_rtl_5
+Compiling module work.finn_design_StreamingFIFO_rtl_5_...
+Compiling module work.fifo_gauge(WIDTH=32'b0101000,COU...
+Compiling module work.StreamingFIFO_rtl_6
+Compiling module work.finn_design_StreamingFIFO_rtl_6_...
+Compiling module work.fifo_gauge(WIDTH=32'b01000,COUNT...
+Compiling module work.StreamingFIFO_rtl_7
+Compiling module work.finn_design_StreamingFIFO_rtl_7_...
+Compiling module work.thresholding(K=32'b01001,N=32'b0...
+Compiling module work.thresholding_axi(WI=32'b01000,WT...
+Compiling module work.Thresholding_rtl_0
+Compiling module work.finn_design_Thresholding_rtl_0_0
+Compiling module work.finn_design
+Compiling module work.finn_design_wrapper
+Built XSI simulation shared library xsim.dir/finn_design_wrapper/xsimk.so
+[2026-08-01 23:36:03,123]INFO:Using pre-existing code for Thresholding_rtl_0
+[2026-08-01 23:36:03,132]INFO:Using pre-existing code for MVAU_hls_0
+[2026-08-01 23:36:03,139]INFO:Using pre-existing code for MVAU_hls_1
+[2026-08-01 23:36:03,146]INFO:Using pre-existing code for MVAU_hls_2
+[2026-08-01 23:36:03,153]INFO:Using pre-existing code for MVAU_hls_3
+[2026-08-01 23:36:03,159]INFO:Using pre-existing code for StreamingDataWidthConverter_rtl_0
+[2026-08-01 23:36:03,166]INFO:Using pre-existing code for LabelSelect_hls_0
+[2026-08-01 23:36:03,220]INFO:Using pre-existing IP for LabelSelect_hls_0
+[2026-08-01 23:36:03,222]INFO:Using pre-existing IP for MVAU_hls_3
+[2026-08-01 23:36:03,223]INFO:Using pre-existing IP for MVAU_hls_2
+[2026-08-01 23:36:03,223]INFO:Using pre-existing IP for MVAU_hls_1
+[2026-08-01 23:36:03,224]INFO:Using pre-existing IP for MVAU_hls_0
+[2026-08-01 23:36:03,240]INFO:Running step: step_hw_codegen [13/20]
+[2026-08-01 23:36:03,240]INFO:Using pre-existing code for StreamingFIFO_rtl_0
+[2026-08-01 23:36:03,240]INFO:Using pre-existing code for Thresholding_rtl_0
+[2026-08-01 23:36:03,240]INFO:Using pre-existing code for StreamingFIFO_rtl_1
+[2026-08-01 23:36:03,240]INFO:Using pre-existing code for MVAU_hls_0
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for StreamingFIFO_rtl_2
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for MVAU_hls_1
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for StreamingFIFO_rtl_3
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for MVAU_hls_2
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for StreamingFIFO_rtl_4
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for MVAU_hls_3
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for StreamingFIFO_rtl_5
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for StreamingDataWidthConverter_rtl_0
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for StreamingFIFO_rtl_6
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for LabelSelect_hls_0
+[2026-08-01 23:36:03,241]INFO:Using pre-existing code for StreamingFIFO_rtl_7
+[2026-08-01 23:36:03,246]INFO:Running step: step_hw_ipgen [14/20]
+[2026-08-01 23:36:03,293]INFO:Using pre-existing IP for LabelSelect_hls_0
+[2026-08-01 23:36:03,295]INFO:Using pre-existing IP for MVAU_hls_3
+[2026-08-01 23:36:03,296]INFO:Using pre-existing IP for MVAU_hls_2
+[2026-08-01 23:36:03,296]INFO:Using pre-existing IP for MVAU_hls_1
+[2026-08-01 23:36:03,296]INFO:Using pre-existing IP for MVAU_hls_0
+[2026-08-01 23:36:03,880]INFO:Running step: step_create_stitched_ip [15/20]
+[2026-08-01 23:36:49,458]INFO:Vivado stitched IP written into /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/output_custom/stitched_ip
+[2026-08-01 23:36:49,462]INFO:Running step: step_measure_rtlsim_performance [16/20]
+[2026-08-01 23:37:10,570]INFO:Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /Software/xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab work.glbl work.finn_design_wrapper -relax -prj rtlsim.prj -dll -s finn_design_wrapper -define FINN_SIMULATION -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_16 -L floating_point_v7_0_21 -L floating_point_v7_1_18 -L floating_point_v7_1_15 -L floating_point_v7_1_19 
+Multi-threading is on. Using 10 slave threads.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/Software/xilinx/Vivado/2023.2/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_0_0/synth/finn_design_StreamingFIFO_rtl_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_Thresholding_rtl_0_0/synth/finn_design_Thresholding_rtl_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_Thresholding_rtl_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_1_0/synth/finn_design_StreamingFIFO_rtl_1_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0_Matrix_Vector_Activate_Stream_Batch.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_Matrix_Vector_Activate_Stream_Batch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_regslice_both
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0_sparsemux_15_3_112_1_1.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_sparsemux_15_3_112_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/6f5f/hdl/verilog/MVAU_hls_0.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_0/synth/finn_design_MVAU_hls_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_wstrm_0/synth/finn_design_MVAU_hls_0_wstrm_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_0_wstrm_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_2_0/synth/finn_design_StreamingFIFO_rtl_2_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/1bf8/hdl/verilog/MVAU_hls_1_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/1bf8/hdl/verilog/MVAU_hls_1_Matrix_Vector_Activate_Stream_Batch.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_Matrix_Vector_Activate_Stream_Batch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/1bf8/hdl/verilog/MVAU_hls_1_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_regslice_both
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/1bf8/hdl/verilog/MVAU_hls_1.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_0/synth/finn_design_MVAU_hls_1_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_wstrm_0/synth/finn_design_MVAU_hls_1_wstrm_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_1_wstrm_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_3_0/synth/finn_design_StreamingFIFO_rtl_3_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_3_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/a293/hdl/verilog/MVAU_hls_2_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/a293/hdl/verilog/MVAU_hls_2_Matrix_Vector_Activate_Stream_Batch.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_Matrix_Vector_Activate_Stream_Batch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/a293/hdl/verilog/MVAU_hls_2_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_regslice_both
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/a293/hdl/verilog/MVAU_hls_2.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_0/synth/finn_design_MVAU_hls_2_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_wstrm_0/synth/finn_design_MVAU_hls_2_wstrm_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_2_wstrm_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_4_0/synth/finn_design_StreamingFIFO_rtl_4_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_4_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/b8f9/hdl/verilog/MVAU_hls_3_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/b8f9/hdl/verilog/MVAU_hls_3_Matrix_Vector_Activate_Stream_Batch.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_Matrix_Vector_Activate_Stream_Batch
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/b8f9/hdl/verilog/MVAU_hls_3_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_regslice_both
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/b8f9/hdl/verilog/MVAU_hls_3.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_0/synth/finn_design_MVAU_hls_3_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_3_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_wstrm_0/synth/finn_design_MVAU_hls_3_wstrm_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_MVAU_hls_3_wstrm_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_5_0/synth/finn_design_StreamingFIFO_rtl_5_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_5_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingDataWidthConverter_rtl_0_0/synth/finn_design_StreamingDataWidthConverter_rtl_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingDataWidthConverter_rtl_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_6_0/synth/finn_design_StreamingFIFO_rtl_6_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_6_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/916d/hdl/verilog/LabelSelect_hls_0_flow_control_loop_pipe_sequential_init.v" into library work
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/916d/hdl/verilog/LabelSelect_hls_0_LabelSelect_hls_0_Pipeline_VITIS_LOOP_199_3.v" into library work
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0_LabelSelect_hls_0_Pipeline_VITIS_LOOP_199_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/916d/hdl/verilog/LabelSelect_hls_0_regslice_both.v" into library work
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0_regslice_both
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ipshared/916d/hdl/verilog/LabelSelect_hls_0.v" into library work
+INFO: [VRFC 10-311] analyzing module LabelSelect_hls_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_LabelSelect_hls_0_0/synth/finn_design_LabelSelect_hls_0_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_LabelSelect_hls_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_7_0/synth/finn_design_StreamingFIFO_rtl_7_0.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_StreamingFIFO_rtl_7_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/synth/finn_design.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_imp_7OH4JA
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_imp_ZIW0NT
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_imp_1WP2WTL
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_imp_U0RWZQ
+INFO: [VRFC 10-311] analyzing module finn_design
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_i0x5u893/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_i0x5u893/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_i0x5u893/fifo_gauge.sv:64]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_i0x5u893/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_i0x5u893/StreamingFIFO_rtl_0.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/axilite.sv:112]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv" into library work
+INFO: [VRFC 10-311] analyzing module thresholding
+WARNING: [VRFC 10-3467] initial value of parameter 'K' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv:55]
+WARNING: [VRFC 10-3467] initial value of parameter 'N' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv:56]
+WARNING: [VRFC 10-3467] initial value of parameter 'C' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv:57]
+WARNING: [VRFC 10-3467] initial value of parameter 'PE' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv:58]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module thresholding_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'WI' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv:42]
+WARNING: [VRFC 10-3467] initial value of parameter 'WT' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv:43]
+WARNING: [VRFC 10-3467] initial value of parameter 'N' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv:44]
+WARNING: [VRFC 10-3467] initial value of parameter 'USE_AXILITE' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv:56]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/Thresholding_rtl_0.v" into library work
+INFO: [VRFC 10-311] analyzing module Thresholding_rtl_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/StreamingFIFO_rtl_1.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/MVAU_hls_0_memstream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_0_memstream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:112]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'axilite' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/axilite.sv:32]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/memstream_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/memstream_axi.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/memstream_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/memstream_axi.sv:36]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/memstream.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/memstream.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/memstream.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/memstream.sv:36]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/StreamingFIFO_rtl_2.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/MVAU_hls_1_memstream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_1_memstream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:112]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'axilite' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/axilite.sv:32]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream_axi' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream_axi.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/memstream.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/StreamingFIFO_rtl_3.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/MVAU_hls_2_memstream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_2_memstream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:112]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'axilite' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/axilite.sv:32]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream_axi' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream_axi.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/memstream.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/StreamingFIFO_rtl_4.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_4
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/MVAU_hls_3_memstream_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module MVAU_hls_3_memstream_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" into library work
+INFO: [VRFC 10-311] analyzing module axilite
+WARNING: [VRFC 10-3467] initial value of parameter 'ADDR_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:33]
+WARNING: [VRFC 10-3467] initial value of parameter 'DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'IP_DATA_WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:35]
+WARNING: [VRFC 10-3380] identifier 'snk_re' is used before its declaration [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:112]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'axilite' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv:32]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream_axi' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" into library work
+INFO: [VRFC 10-311] analyzing module memstream
+WARNING: [VRFC 10-3467] initial value of parameter 'SETS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv:34]
+WARNING: [VRFC 10-3467] initial value of parameter 'DEPTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv:36]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memstream' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_53nkxa0o/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_53nkxa0o/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_53nkxa0o/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_53nkxa0o/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_53nkxa0o/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_53nkxa0o/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_53nkxa0o/StreamingFIFO_rtl_5.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv" into library work
+INFO: [VRFC 10-311] analyzing module dwc_axi
+WARNING: [VRFC 10-3467] initial value of parameter 'IBITS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'OBITS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv:36]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv" into library work
+INFO: [VRFC 10-311] analyzing module dwc
+WARNING: [VRFC 10-3467] initial value of parameter 'IBITS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv:35]
+WARNING: [VRFC 10-3467] initial value of parameter 'OBITS' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv:36]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/StreamingDataWidthConverter_rtl_0.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingDataWidthConverter_rtl_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_yza7sneb/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_yza7sneb/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_yza7sneb/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_yza7sneb/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_yza7sneb/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_yza7sneb/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_yza7sneb/StreamingFIFO_rtl_6.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_6
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_gauge
+WARNING: [VRFC 10-3467] initial value of parameter 'WIDTH' is omitted [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv:36]
+WARNING: [VRFC 10-587] dynamic variables shall not be written with non-blocking assignments [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv:64]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fifo_gauge' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/Q_srl.v" into library work
+INFO: [VRFC 10-311] analyzing module Q_srl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Q_srl' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/Q_srl.v:72]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/StreamingFIFO_rtl_7.v" into library work
+INFO: [VRFC 10-311] analyzing module StreamingFIFO_rtl_7
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/hdl/finn_design_wrapper.v" into library work
+INFO: [VRFC 10-311] analyzing module finn_design_wrapper
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'config_address' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:164]
+WARNING: [VRFC 10-3091] actual bit length 3584 differs from formal bit length 1 for port 'sidx' [/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv:171]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_LabelSelect_hls_0_0/synth/finn_design_LabelSelect_hls_0_0.v" Line 53. Module finn_design_LabelSelect_hls_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_0/synth/finn_design_MVAU_hls_0_0.v" Line 53. Module finn_design_MVAU_hls_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_wstrm_0/synth/finn_design_MVAU_hls_0_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_0_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/MVAU_hls_0_memstream_wrapper.v" Line 32. Module MVAU_hls_0_memstream_wrapper(AXILITE_ADDR_WIDTH=13,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b01110,WIDTH=32'b0111000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_0_h0943ym1/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01101,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b0111000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b01110,WIDTH=32'b0111000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_0_h0943ym1/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_0/synth/finn_design_MVAU_hls_1_0.v" Line 53. Module finn_design_MVAU_hls_1_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_wstrm_0/synth/finn_design_MVAU_hls_1_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_1_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/MVAU_hls_1_memstream_wrapper.v" Line 32. Module MVAU_hls_1_memstream_wrapper(AXILITE_ADDR_WIDTH=9,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_1_8tpbvyo7/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01001,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b010000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_1_8tpbvyo7/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_0/synth/finn_design_MVAU_hls_2_0.v" Line 53. Module finn_design_MVAU_hls_2_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_wstrm_0/synth/finn_design_MVAU_hls_2_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_2_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/MVAU_hls_2_memstream_wrapper.v" Line 32. Module MVAU_hls_2_memstream_wrapper(AXILITE_ADDR_WIDTH=9,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_2_q8rzagbl/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01001,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b010000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_2_q8rzagbl/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_0/synth/finn_design_MVAU_hls_3_0.v" Line 53. Module finn_design_MVAU_hls_3_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_wstrm_0/synth/finn_design_MVAU_hls_3_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_3_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/MVAU_hls_3_memstream_wrapper.v" Line 32. Module MVAU_hls_3_memstream_wrapper(AXILITE_ADDR_WIDTH=7,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b010,WIDTH=32'b0101000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_3_bl5vtbe5/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b0111,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b0101000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b010,WIDTH=32'b0101000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_3_bl5vtbe5/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/StreamingDataWidthConverter_rtl_0.v" Line 32. Module StreamingDataWidthConverter_rtl_0(AXI_IBITS=72,AXI_OBITS=40) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv" Line 34. Module dwc_axi(IBITS=32'b01000110,OBITS=32'b0100011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv" Line 34. Module dwc(IBITS=32'b01000110,OBITS=32'b0100011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_0_0/synth/finn_design_StreamingFIFO_rtl_0_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_i0x5u893/StreamingFIFO_rtl_0.v" Line 32. Module StreamingFIFO_rtl_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01110000000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_1_0/synth/finn_design_StreamingFIFO_rtl_1_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_1_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/StreamingFIFO_rtl_1.v" Line 32. Module StreamingFIFO_rtl_1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01110000,COUNT_WIDTH=32'b0110) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_2_0/synth/finn_design_StreamingFIFO_rtl_2_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_2_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/StreamingFIFO_rtl_2.v" Line 32. Module StreamingFIFO_rtl_2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_3_0/synth/finn_design_StreamingFIFO_rtl_3_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_3_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/StreamingFIFO_rtl_3.v" Line 32. Module StreamingFIFO_rtl_3 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_4_0/synth/finn_design_StreamingFIFO_rtl_4_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_4_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/StreamingFIFO_rtl_4.v" Line 32. Module StreamingFIFO_rtl_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_5_0/synth/finn_design_StreamingFIFO_rtl_5_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_5_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_5_53nkxa0o/StreamingFIFO_rtl_5.v" Line 32. Module StreamingFIFO_rtl_5 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01001000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_6_0/synth/finn_design_StreamingFIFO_rtl_6_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_6_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_6_yza7sneb/StreamingFIFO_rtl_6.v" Line 32. Module StreamingFIFO_rtl_6 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0101000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_7_0/synth/finn_design_StreamingFIFO_rtl_7_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_7_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/StreamingFIFO_rtl_7.v" Line 32. Module StreamingFIFO_rtl_7 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_Thresholding_rtl_0_0/synth/finn_design_Thresholding_rtl_0_0.v" Line 53. Module finn_design_Thresholding_rtl_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/Thresholding_rtl_0.v" Line 35. Module Thresholding_rtl_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding_axi.sv" Line 41. Module thresholding_axi(WI=32'b01000,WT=32'b01001,N=32'b01,C=32'b01110000,PE=32'b01110000,SIGNED=1'b0,FPARG=1'b0,SETS=32'b01,THRESHOLDS_PATH="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_Thresholding_rtl_0_wjco73gb/Thresholding_rtl_0_",USE_AXILITE=1'b0,DEPTH_TRIGGER_URAM=32'b0,DEPTH_TRIGGER_BRAM=32'b0,DEEP_PIPELINE=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/Thresholding_rtl_0/thresholding.sv" Line 54. Module thresholding(K=32'b01001,N=32'b01,C=32'b01110000,PE=32'b01110000,SIGNED=1'b0,FPARG=1'b0,THRESHOLDS_PATH="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_Thresholding_rtl_0_wjco73gb/Thresholding_rtl_0_",USE_CONFIG=1'b0,DEPTH_TRIGGER_URAM=32'b0,DEPTH_TRIGGER_BRAM=32'b0,DEEP_PIPELINE=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_LabelSelect_hls_0_0/synth/finn_design_LabelSelect_hls_0_0.v" Line 53. Module finn_design_LabelSelect_hls_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_0/synth/finn_design_MVAU_hls_0_0.v" Line 53. Module finn_design_MVAU_hls_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_0_wstrm_0/synth/finn_design_MVAU_hls_0_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_0_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_0/MVAU_hls_0_memstream_wrapper.v" Line 32. Module MVAU_hls_0_memstream_wrapper(AXILITE_ADDR_WIDTH=13,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b01110,WIDTH=32'b0111000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_0_h0943ym1/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01101,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b0111000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b01110,WIDTH=32'b0111000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_0_h0943ym1/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_0/synth/finn_design_MVAU_hls_1_0.v" Line 53. Module finn_design_MVAU_hls_1_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_1_wstrm_0/synth/finn_design_MVAU_hls_1_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_1_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_1/MVAU_hls_1_memstream_wrapper.v" Line 32. Module MVAU_hls_1_memstream_wrapper(AXILITE_ADDR_WIDTH=9,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_1_8tpbvyo7/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01001,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b010000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_1_8tpbvyo7/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_0/synth/finn_design_MVAU_hls_2_0.v" Line 53. Module finn_design_MVAU_hls_2_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_2_wstrm_0/synth/finn_design_MVAU_hls_2_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_2_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_2/MVAU_hls_2_memstream_wrapper.v" Line 32. Module MVAU_hls_2_memstream_wrapper(AXILITE_ADDR_WIDTH=9,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_2_q8rzagbl/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b01001,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b010000000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b0100,WIDTH=32'b010000000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_2_q8rzagbl/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_0/synth/finn_design_MVAU_hls_3_0.v" Line 53. Module finn_design_MVAU_hls_3_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_MVAU_hls_3_wstrm_0/synth/finn_design_MVAU_hls_3_wstrm_0.v" Line 53. Module finn_design_MVAU_hls_3_wstrm_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/MVAU_hls_3_memstream_wrapper.v" Line 32. Module MVAU_hls_3_memstream_wrapper(AXILITE_ADDR_WIDTH=7,SET_BITS=1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream_axi.sv" Line 33. Module memstream_axi(SETS=32'b01,DEPTH=32'b010,WIDTH=32'b0101000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_3_bl5vtbe5/memblock.dat",PUMPED_MEMORY=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/axilite.sv" Line 32. Module axilite(ADDR_WIDTH=32'b0111,DATA_WIDTH=32'b0100000,IP_DATA_WIDTH=32'b0101000000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/ip/verilog/rtl_ops/MVAU_hls_3/memstream.sv" Line 33. Module memstream(SETS=32'b01,DEPTH=32'b010,WIDTH=32'b0101000000,INIT_FILE="/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_MVAU_hls_3_bl5vtbe5/memblock.dat") doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/StreamingDataWidthConverter_rtl_0.v" Line 32. Module StreamingDataWidthConverter_rtl_0(AXI_IBITS=72,AXI_OBITS=40) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc_axi.sv" Line 34. Module dwc_axi(IBITS=32'b01000110,OBITS=32'b0100011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingDataWidthConverter_rtl_0_97aap93n/dwc.sv" Line 34. Module dwc(IBITS=32'b01000110,OBITS=32'b0100011) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_0_0/synth/finn_design_StreamingFIFO_rtl_0_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_0_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_0_i0x5u893/StreamingFIFO_rtl_0.v" Line 32. Module StreamingFIFO_rtl_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01110000000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_1_0/synth/finn_design_StreamingFIFO_rtl_1_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_1_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_1_gton2v19/StreamingFIFO_rtl_1.v" Line 32. Module StreamingFIFO_rtl_1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b01110000,COUNT_WIDTH=32'b0110) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_2_0/synth/finn_design_StreamingFIFO_rtl_2_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_2_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_2_8i6dvl81/StreamingFIFO_rtl_2.v" Line 32. Module StreamingFIFO_rtl_2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_3_0/synth/finn_design_StreamingFIFO_rtl_3_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_3_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_3_3bprct64/StreamingFIFO_rtl_3.v" Line 32. Module StreamingFIFO_rtl_3 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_4_0/synth/finn_design_StreamingFIFO_rtl_4_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_4_0 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_4_jilengx6/StreamingFIFO_rtl_4.v" Line 32. Module StreamingFIFO_rtl_4 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/code_gen_ipgen_StreamingFIFO_rtl_7_rl5edl4a/fifo_gauge.sv" Line 35. Module fifo_gauge(WIDTH=32'b0100000,COUNT_WIDTH=32'b010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/FINN_TMP/vivado_stitch_proj_76_3v_dv/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/ip/finn_design_StreamingFIFO_rtl_5_0/synth/finn_design_StreamingFIFO_rtl_5_0.v" Line 53. Module finn_design_StreamingFIFO_rtl_5_0 doesn't have a timescale but at least one module in design has a timescale.
+INFO: [Common 17-14] Message 'XSIM 43-4099' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.glbl
+Compiling module work.LabelSelect_hls_0_flow_control_l...
+Compiling module work.LabelSelect_hls_0_LabelSelect_hl...
+Compiling module work.LabelSelect_hls_0_regslice_both(...
+Compiling module work.LabelSelect_hls_0_regslice_both(...
+Compiling module work.LabelSelect_hls_0
+Compiling module work.finn_design_LabelSelect_hls_0_0
+Compiling module work.MVAU_hls_0_sparsemux_15_3_112_1_...
+Compiling module work.MVAU_hls_0_flow_control_loop_pip...
+Compiling module work.MVAU_hls_0_Matrix_Vector_Activat...
+Compiling module work.MVAU_hls_0_regslice_both(DataWid...
+Compiling module work.MVAU_hls_0_regslice_both(DataWid...
+Compiling module work.MVAU_hls_0_regslice_both
+Compiling module work.MVAU_hls_0
+Compiling module work.finn_design_MVAU_hls_0_0
+Compiling module work.axilite(ADDR_WIDTH=32'b01101,DAT...
+Compiling module work.memstream(SETS=32'b01,DEPTH=32'b...
+Compiling module work.memstream_axi(SETS=32'b01,DEPTH=...
+Compiling module work.MVAU_hls_0_memstream_wrapper(AXI...
+Compiling module work.finn_design_MVAU_hls_0_wstrm_0
+Compiling module work.MVAU_hls_0_imp_7OH4JA
+Compiling module work.MVAU_hls_1_flow_control_loop_pip...
+Compiling module work.MVAU_hls_1_Matrix_Vector_Activat...
+Compiling module work.MVAU_hls_1_regslice_both
+Compiling module work.MVAU_hls_1_regslice_both(DataWid...
+Compiling module work.MVAU_hls_1
+Compiling module work.finn_design_MVAU_hls_1_0
+Compiling module work.axilite(ADDR_WIDTH=32'b01001,DAT...
+Compiling module work.memstream(SETS=32'b01,DEPTH=32'b...
+Compiling module work.memstream_axi(SETS=32'b01,DEPTH=...
+Compiling module work.MVAU_hls_1_memstream_wrapper(AXI...
+Compiling module work.finn_design_MVAU_hls_1_wstrm_0
+Compiling module work.MVAU_hls_1_imp_ZIW0NT
+Compiling module work.MVAU_hls_2_flow_control_loop_pip...
+Compiling module work.MVAU_hls_2_Matrix_Vector_Activat...
+Compiling module work.MVAU_hls_2_regslice_both
+Compiling module work.MVAU_hls_2_regslice_both(DataWid...
+Compiling module work.MVAU_hls_2
+Compiling module work.finn_design_MVAU_hls_2_0
+Compiling module work.memstream(SETS=32'b01,DEPTH=32'b...
+Compiling module work.memstream_axi(SETS=32'b01,DEPTH=...
+Compiling module work.MVAU_hls_2_memstream_wrapper(AXI...
+Compiling module work.finn_design_MVAU_hls_2_wstrm_0
+Compiling module work.MVAU_hls_2_imp_1WP2WTL
+Compiling module work.MVAU_hls_3_flow_control_loop_pip...
+Compiling module work.MVAU_hls_3_Matrix_Vector_Activat...
+Compiling module work.MVAU_hls_3_regslice_both
+Compiling module work.MVAU_hls_3_regslice_both(DataWid...
+Compiling module work.MVAU_hls_3_regslice_both(DataWid...
+Compiling module work.MVAU_hls_3
+Compiling module work.finn_design_MVAU_hls_3_0
+Compiling module work.axilite(ADDR_WIDTH=32'b0111,DATA...
+Compiling module work.memstream(SETS=32'b01,DEPTH=32'b...
+Compiling module work.memstream_axi(SETS=32'b01,DEPTH=...
+Compiling module work.MVAU_hls_3_memstream_wrapper(AXI...
+Compiling module work.finn_design_MVAU_hls_3_wstrm_0
+Compiling module work.MVAU_hls_3_imp_U0RWZQ
+Compiling module work.dwc(IBITS=32'b01000110,OBITS=32'...
+Compiling module work.dwc_axi(IBITS=32'b01000110,OBITS...
+Compiling module work.StreamingDataWidthConverter_rtl_...
+Compiling module work.fifo_gauge(WIDTH=32'b01110000000...
+Compiling module work.StreamingFIFO_rtl_0
+Compiling module work.finn_design_StreamingFIFO_rtl_0_...
+Compiling module work.fifo_gauge(WIDTH=32'b01110000,CO...
+Compiling module work.StreamingFIFO_rtl_1
+Compiling module work.finn_design_StreamingFIFO_rtl_1_...
+Compiling module work.fifo_gauge(WIDTH=32'b0100000,COU...
+Compiling module work.StreamingFIFO_rtl_2
+Compiling module work.finn_design_StreamingFIFO_rtl_2_...
+Compiling module work.StreamingFIFO_rtl_3
+Compiling module work.finn_design_StreamingFIFO_rtl_3_...
+Compiling module work.StreamingFIFO_rtl_4
+Compiling module work.finn_design_StreamingFIFO_rtl_4_...
+Compiling module work.fifo_gauge(WIDTH=32'b01001000,CO...
+Compiling module work.StreamingFIFO_rtl_5
+Compiling module work.finn_design_StreamingFIFO_rtl_5_...
+Compiling module work.fifo_gauge(WIDTH=32'b0101000,COU...
+Compiling module work.StreamingFIFO_rtl_6
+Compiling module work.finn_design_StreamingFIFO_rtl_6_...
+Compiling module work.fifo_gauge(WIDTH=32'b01000,COUNT...
+Compiling module work.StreamingFIFO_rtl_7
+Compiling module work.finn_design_StreamingFIFO_rtl_7_...
+Compiling module work.thresholding(K=32'b01001,N=32'b0...
+Compiling module work.thresholding_axi(WI=32'b01000,WT...
+Compiling module work.Thresholding_rtl_0
+Compiling module work.finn_design_Thresholding_rtl_0_0
+Compiling module work.finn_design
+Compiling module work.finn_design_wrapper
+Built XSI simulation shared library xsim.dir/finn_design_wrapper/xsimk.so
+[2026-08-01 23:37:12,019]INFO:Running step: step_out_of_context_synthesis [17/20]
+[2026-08-01 23:37:12,025]INFO:Running step: step_synthesize_bitfile [18/20]
+[2026-08-01 23:37:12,051]WARNING:17 nodes have no entry in                the provided floorplan, SLR was set to -1
+[2026-08-01 23:38:06,731]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingFIFO_rtl_0
+[2026-08-01 23:38:06,732]INFO:Using pre-existing code for StreamingDataflowPartition_1_Thresholding_rtl_0
+[2026-08-01 23:38:06,732]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingFIFO_rtl_1
+[2026-08-01 23:38:06,732]INFO:Using pre-existing code for StreamingDataflowPartition_1_MVAU_hls_0
+[2026-08-01 23:38:06,733]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingFIFO_rtl_2
+[2026-08-01 23:38:06,733]INFO:Using pre-existing code for StreamingDataflowPartition_1_MVAU_hls_1
+[2026-08-01 23:38:06,733]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingFIFO_rtl_3
+[2026-08-01 23:38:06,733]INFO:Using pre-existing code for StreamingDataflowPartition_1_MVAU_hls_2
+[2026-08-01 23:38:06,734]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingFIFO_rtl_4
+[2026-08-01 23:38:06,734]INFO:Using pre-existing code for StreamingDataflowPartition_1_MVAU_hls_3
+[2026-08-01 23:38:06,734]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingFIFO_rtl_5
+[2026-08-01 23:38:06,735]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingDataWidthConverter_rtl_0
+[2026-08-01 23:38:06,735]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingFIFO_rtl_6
+[2026-08-01 23:38:06,735]INFO:Using pre-existing code for StreamingDataflowPartition_1_LabelSelect_hls_0
+[2026-08-01 23:38:06,736]INFO:Using pre-existing code for StreamingDataflowPartition_1_StreamingFIFO_rtl_7
+[2026-08-01 23:38:06,782]INFO:Using pre-existing IP for StreamingDataflowPartition_1_LabelSelect_hls_0
+[2026-08-01 23:38:06,784]INFO:Using pre-existing IP for StreamingDataflowPartition_1_MVAU_hls_3
+[2026-08-01 23:38:06,785]INFO:Using pre-existing IP for StreamingDataflowPartition_1_MVAU_hls_2
+[2026-08-01 23:38:06,786]INFO:Using pre-existing IP for StreamingDataflowPartition_1_MVAU_hls_1
+[2026-08-01 23:38:06,786]INFO:Using pre-existing IP for StreamingDataflowPartition_1_MVAU_hls_0
+[2026-08-01 23:50:25,933]INFO:Bitfile written into /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/output_custom/bitfile
+[2026-08-01 23:50:25,952]INFO:Running step: step_make_driver [19/20]
+[2026-08-01 23:50:26,166]INFO:PYNQ Python driver written into /home/neuralnetwork01/Schreibtisch/s7s/nn/task3/Task-3-data/output_custom/driver
+[2026-08-01 23:50:26,167]INFO:Running step: step_deployment_package [20/20]

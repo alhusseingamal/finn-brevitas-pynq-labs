@@ -1,0 +1,7 @@
+{
+  "critical_path_cycles": 82,
+  "max_cycles": 28,
+  "max_cycles_node_name": "Reshape_rtl_0",
+  "estimated_throughput_fps": 3571428.5714285714,
+  "estimated_latency_ns": 820.0
+}

@@ -1,0 +1,50 @@
+{
+  "MVAU_hls_0": {
+    "BRAM_18K": 0,
+    "FF": 7472,
+    "LUT": 78834,
+    "DSP48E": 0,
+    "URAM": 0,
+    "DSP": 0
+  },
+  "MVAU_hls_1": {
+    "BRAM_18K": 0,
+    "FF": 2584,
+    "LUT": 15666,
+    "DSP48E": 0,
+    "URAM": 0,
+    "DSP": 0
+  },
+  "MVAU_hls_2": {
+    "BRAM_18K": 0,
+    "FF": 2579,
+    "LUT": 15615,
+    "DSP48E": 0,
+    "URAM": 0,
+    "DSP": 0
+  },
+  "MVAU_hls_3": {
+    "BRAM_18K": 0,
+    "FF": 521,
+    "LUT": 4791,
+    "DSP48E": 0,
+    "URAM": 0,
+    "DSP": 0
+  },
+  "LabelSelect_hls_0": {
+    "BRAM_18K": 0,
+    "FF": 77,
+    "LUT": 336,
+    "DSP48E": 0,
+    "URAM": 0,
+    "DSP": 0
+  },
+  "total": {
+    "BRAM_18K": 0.0,
+    "FF": 13233.0,
+    "LUT": 115242.0,
+    "DSP48E": 0.0,
+    "URAM": 0.0,
+    "DSP": 0.0
+  }
+}

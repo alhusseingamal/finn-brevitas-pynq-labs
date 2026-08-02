@@ -1,0 +1,29 @@
+{
+  "fifo_depths": {
+    "StreamingFIFO_rtl_0": 2,
+    "StreamingFIFO_rtl_1": 2,
+    "StreamingFIFO_rtl_2": 2,
+    "StreamingFIFO_rtl_3": 32,
+    "StreamingFIFO_rtl_4": 2,
+    "StreamingFIFO_rtl_5": 2,
+    "StreamingFIFO_rtl_6": 2,
+    "StreamingFIFO_rtl_7": 2,
+    "StreamingFIFO_rtl_8": 32,
+    "StreamingFIFO_rtl_9": 2,
+    "StreamingFIFO_rtl_10": 2
+  },
+  "fifo_sizes": {
+    "StreamingFIFO_rtl_0": 16,
+    "StreamingFIFO_rtl_1": 16,
+    "StreamingFIFO_rtl_2": 2,
+    "StreamingFIFO_rtl_3": 896,
+    "StreamingFIFO_rtl_4": 4,
+    "StreamingFIFO_rtl_5": 16,
+    "StreamingFIFO_rtl_6": 2,
+    "StreamingFIFO_rtl_7": 16,
+    "StreamingFIFO_rtl_8": 32,
+    "StreamingFIFO_rtl_9": 14,
+    "StreamingFIFO_rtl_10": 16
+  },
+  "total_fifo_size_kB": 0
+}

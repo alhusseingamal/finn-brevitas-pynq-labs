@@ -1,0 +1,9 @@
+{
+  "Reshape_rtl_0": 56,
+  "Thresholding_rtl_0": 56,
+  "MVAU_hls_0": 14,
+  "MVAU_hls_1": 4,
+  "MVAU_hls_2": 4,
+  "MVAU_hls_3": 2,
+  "LabelSelect_hls_0": 2
+}
